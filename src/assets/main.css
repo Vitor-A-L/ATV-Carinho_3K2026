@@ -7,4 +7,18 @@
 
 body{
   font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(120, 80, 50, 0.4) 0%,
+            rgba(60, 35, 20, 0.3) 30%,
+            rgba(20, 10, 5, 0.9) 70%
+        ),
+        linear-gradient(
+            90deg,
+            #0f0906 0%,
+            #1c120d 40%,
+            #2b1c14 100%
+        );
 }
+

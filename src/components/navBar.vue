@@ -4,24 +4,23 @@ import { ShoppingCart, Heart, User, Search } from 'lucide-vue-next'
 <template>
   <nav class="navbar">
     <div class="esquerda">
-      <h1>Sigma Books </h1>
-      <span class="slogan">os livros 10/10</span>
+      <h1 style="font-family: 'Playfair Display', serif;">Sigma's coffee </h1>
     </div>
     <div class="centro">
       <div class="search-box">
 
 
-  <input  type="text" placeholder="Pesquisar" >
-  <Search />
+  
+  
 </div>
-      <a href="#">Termos</a>
-      <a href="#">Equipe</a>
-      <a href="#">Envio</a>
-      <a href="#">Devoluções</a>
+      <a href="#">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
     </div>
     <div class="direita">
        <span><ShoppingCart /></span>
-      <span class="sim"><Heart /></span>
+      <span class="sim"><Search /></span>
       <span><User /></span>
     </div>
   </nav>
@@ -35,10 +34,10 @@ import { ShoppingCart, Heart, User, Search } from 'lucide-vue-next'
   justify-content: space-between;
   padding: 20px 60px;
   margin-top: 25px;
-  border-bottom: #27ae60 2px solid;
-
+  
 
 }
+
 .esquerda,
 .centro,
 .direita{
@@ -54,20 +53,13 @@ import { ShoppingCart, Heart, User, Search } from 'lucide-vue-next'
 }
 
 .esquerda h1{
-  color: #000000;
+  color: #ffffff;
   font-size: 32px;
 }
-.slogan{
-  margin-left: 10px;
-  color: #27ae60;
-  font-size: 14px;
-  border-left: #27ae60 2px solid;
-  width: 65px;
-  padding-left: 10px;
-}
+
 .centro a{
   text-decoration: none;
-  color:rgb(112, 111, 111);
+  color:rgb(255, 255, 255);
   font-weight: 500;
 
 }
@@ -78,42 +70,18 @@ import { ShoppingCart, Heart, User, Search } from 'lucide-vue-next'
   align-items: center;
 }
 
-.search-box svg{
-  position: absolute;
-
-  left: 315px;
-  right: 10px;
-
-  width: 18px;
-  height: 18px;
-
-  color: gray;
-}
-
-.search-box input{
-  padding-left: 25px;
 
 
 
-  width: 350px;
-  height: 40px;
-
-  border: none;
-  border-radius: 8px;
-
-  background: #f3f3f3;
-}
 
 .sim{
-  border-left: #27ae60 2px solid;
   padding-left: 15px;
-  border-right: #27ae60 2px solid;
   padding-right: 15px;
 }
 svg{
   width: 22px;
   height: 22px;
   cursor: pointer;
-  color: green;
+  color: rgb(255, 255, 255);
 }
 </style>
