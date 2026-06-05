@@ -55,7 +55,7 @@ import {
   Snowflake,
   Waves,
   Leaf,
-  GlassWater
+ GlassWater
 } from 'lucide-vue-next'
 </script>
 
