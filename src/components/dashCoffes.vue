@@ -1,9 +1,9 @@
 <script setup>
 defineProps({
-  titulo: { type: String },
-  descricao: { type: String },
-  imagem: { type: String },
-  valor: { type: String }
+  titulo: String,
+  descricao: String,
+  imagem: String,
+  valor: String
 })
 import { ShoppingCart } from 'lucide-vue-next'
 </script>
