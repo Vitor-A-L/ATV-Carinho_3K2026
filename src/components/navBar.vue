@@ -1,5 +1,7 @@
 <script setup>
-import { ShoppingCart, Heart, User, Search } from 'lucide-vue-next'
+import { ShoppingCart,  User, Search } from 'lucide-vue-next'
+import { RouterLink } from 'vue-router'
+
 </script>
 <template>
   <nav class="navbar">
@@ -10,16 +12,18 @@ import { ShoppingCart, Heart, User, Search } from 'lucide-vue-next'
       <div class="search-box">
 
 
-  
-  
+
+
 </div>
-      <a href="#">Home</a>
+      <RouterLink to="/"><a href="#">Home</a></RouterLink>
       <a href="#">Menu</a>
       <a href="#">About Us</a>
       <a href="#">Contact</a>
     </div>
     <div class="direita">
-       <span><ShoppingCart /></span>
+       <RouterLink to="/cart">
+  <ShoppingCart />
+</RouterLink>
       <span class="sim"><Search /></span>
       <span><User /></span>
     </div>
@@ -34,7 +38,7 @@ import { ShoppingCart, Heart, User, Search } from 'lucide-vue-next'
   justify-content: space-between;
   padding: 20px 60px;
   margin-top: 25px;
-  
+
 
 }
 
