@@ -4,7 +4,7 @@ import heroSection from '@/components/heroSection.vue'
 import navBar from '@/components/navBar.vue'
 import FeaturesSection from '@/components/FeaturesSection.vue'
 import dashCoffes from '@/components/dashCoffes.vue'
-
+import footerSection from '@/components/footerSection.vue'
 
 const coffes = [
   { id: 1, titulo:'Vanila Ice', descricao:'Super Fresh' , imagem:'/public/vanila-ice.png', valor: 'R$29.99' },
@@ -32,6 +32,9 @@ const coffes = [
   :valor="coffe.valor"
 ></dashCoffes>
 </div>
+<div class="footer">
+<footerSection></footerSection>
+</div>
 </template>
 <style scoped>
 .grid{ display: flex;
@@ -44,7 +47,13 @@ const coffes = [
   gap: 165px;
   row-gap: 110px;
 }
-
+div.footer{
+  margin-top: 110px;
+  padding-top: 110px;
+  background-color: #c98a4b;
+  height: 300px ;
+  width: 100%;
+}
 </style>
 
 

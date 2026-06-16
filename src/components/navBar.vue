@@ -1,7 +1,6 @@
 <script setup>
 import { ShoppingCart,  User, Search } from 'lucide-vue-next'
 import { RouterLink } from 'vue-router'
-import FacebookIcon from '@iconify-vue/uil/facebook';
 
 </script>
 <template>

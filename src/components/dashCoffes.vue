@@ -31,6 +31,7 @@ import { ShoppingCart } from 'lucide-vue-next'
   font-size: 14px;
   align-items: center;
   position: relative;
+
 }
 
 
