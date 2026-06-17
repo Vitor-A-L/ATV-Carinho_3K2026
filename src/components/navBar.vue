@@ -74,10 +74,6 @@ import { RouterLink } from 'vue-router'
   align-items: center;
 }
 
-
-
-
-
 .sim{
   padding-left: 15px;
   padding-right: 15px;

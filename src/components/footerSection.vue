@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 import FacebookIcon from '@iconify-vue/uil/facebook'
 import InstagramIcon from '@iconify-vue/uil/instagram'
 import TwitterIcon from '@iconify-vue/uil/twitter'
@@ -9,35 +8,66 @@ import TwitterIcon from '@iconify-vue/uil/twitter'
   <section class="rodape">
     <div class="redes">
       <h2 style="font-family: 'Playfair Display', serif">Redes Sociais</h2>
-      <FacebookIcon height="1em" style="color: #000" />
-      <InstagramIcon height="1em" style="color: #000" />
-      <TwitterIcon height="1em" style="color: #000" />
+      <FacebookIcon height="3em" style="color: #000;  margin-right: 20px; margin-top: 17px;" />
+      <InstagramIcon height="3em" style="color: #000;  margin-right: 20px;" />
+      <TwitterIcon height="3em" style="color: #000;" />
     </div>
     <div class="desenvolvedores">
-      <h2 style="font-family: 'Playfair Display', serif">Desenvolvido Por</h2>
-      <p>Vitor Avanzi Lipinski</p>
-      <p>Nicholas Oyafuso</p>
-      <p>Rafael Alvez dos Santos</p>
+      <h2 style="font-family: 'Playfair Display', serif">Desenvolvedores</h2>
+      <p>- Vitor Avanzi Lipinski -</p>
+      <p>- Nicholas Oyafuso -</p>
+      <p>- Rafael Alvez dos Santos -</p>
     </div>
     <div class="info">
       <h2 style="font-family: 'Playfair Display', serif">Informações de Contato</h2>
-      <a href="">sigma'scoffee@gmail.com</a>
-      <RouterLink to="/"><a href="#">Voltar Para o Menu</a></RouterLink>
+      <a href="mailto:sigma'scoffee@gmail.com">sigma'scoffee@gmail.com</a>
+      <p>Tel:+55 47 9922-4519</p>
     </div>
   </section>
-  ©Sigma's coffee
+  <p class="direitos">©Sigma's coffee</p>
 </template>
 
 <style scoped>
 .rodape {
-  align-items: center;
+  margin-top: -80px;
   display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
   flex-wrap: wrap;
-   gap: 195px;
-position: relative;
-  justify-content: center;
-  color: #000000;
+  padding: 40px 20px;
+  width: 100%;
+  color: #000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
+}
+.direitos{
+  margin-top: 10px;
+text-align: center;
+font-weight: bolder;
+font-size: 20px;
+}
+h2{
+  font-size: 32px;
+
+}
+.desenvolvedores p{
+  margin-top: 10px;
+  font-weight: lighter;
+  font-size: 25px;
+  font-style: italic;
+}
+
+.info a{
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-style: italic;
+ /* margin-top: 20px;  não sei porque náo funciona o margin aqui*/
+
+}
+.info p{
+  margin-top: 10px;
+  font-size: 20px;
+
 }
 </style>
