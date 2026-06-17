@@ -41,7 +41,7 @@ import TwitterIcon from '@iconify-vue/uil/twitter'
   font-size: 14px;
 }
 .direitos{
-  margin-top: 10px;
+
 text-align: center;
 font-weight: bolder;
 font-size: 20px;
