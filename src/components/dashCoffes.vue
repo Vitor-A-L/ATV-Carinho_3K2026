@@ -5,6 +5,7 @@ defineProps({
   imagem: String,
   valor: String
 })
+const emit = defineEmits(['adicionar'])
 import { ShoppingCart } from 'lucide-vue-next'
 </script>
 <template>
@@ -14,14 +15,13 @@ import { ShoppingCart } from 'lucide-vue-next'
       <h1>{{ titulo }}</h1>
       <h2>{{ descricao }}</h2>
       <p class="desc">{{ valor }}</p>
-      <button>
+      <button @click="emit('adicionar', { titulo, descricao, imagem, valor })">
         Adicionar
         <ShoppingCart :size="20" :stroke-width="2.4" />
       </button>
     </div>
   </nav>
 </template>
-
 <style scoped>
 .main {
   background-color: #e7ddd0;
@@ -31,10 +31,7 @@ import { ShoppingCart } from 'lucide-vue-next'
   font-size: 14px;
   align-items: center;
   position: relative;
-
 }
-
-
 img {
   width: 420px;
   height: 330px;
@@ -44,8 +41,6 @@ img {
   transform: translateX(-50%);
   object-fit: contain;
 }
-
-
 h1 {
   padding-left: 24px;
    margin-top: 230px;
@@ -62,7 +57,6 @@ h2 {
   opacity: 60%;
   font-size: 12px;
 }
-
 p {
   padding-left: 24px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -88,5 +82,13 @@ button {
   border: none;
   margin-top: 15px;
   box-shadow: 10px 6px 15px rgba(201, 138, 75, 0.5);
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.2s;
+}
+button:hover {
+  background-color: #d89a5b;
+}
+button:active {
+  transform: scale(0.97);
 }
 </style>
