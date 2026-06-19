@@ -39,11 +39,10 @@ const coffes = [
 </div>
 </template>
 <style scoped>
-.grid{ display: flex;
+.grid{ 
   align-items: center;
   justify-content: center;
-  padding-top: 110px;
-  padding-left: 10px;
+  padding: 2vw;
   display: flex;
   flex-wrap: wrap;
   gap: 165px;
@@ -53,7 +52,6 @@ div.footer{
   margin-top: 110px;
   padding-top: 110px;
   background-color: #c98a4b;
-  height: 300px ;
   width: 100%;
 }
 </style>

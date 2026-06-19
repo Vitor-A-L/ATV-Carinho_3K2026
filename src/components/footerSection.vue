@@ -34,7 +34,7 @@ import TwitterIcon from '@iconify-vue/uil/twitter'
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 40px 20px;
+  padding: 2vw 1vw;
   width: 100%;
   color: #000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
