@@ -2,20 +2,31 @@
 import NavBar from '@/components/navBar.vue'
 import { ShoppingCart } from 'lucide-vue-next'
 import { RouterLink } from 'vue-router'
-const subtotal = 'R$146,32'
-const shipping = 'R$0,00'
-const total = 'R$146,32'
-const cartItems = [
-  {
-    id: 1,
-    titulo: 'Vanila Ice',
-    descricao: 'Super Fresh',
-    imagem: '/vanila-ice.png',
-    valor: 'R$29,99',
-    quantidade: 2,
-    subtotal: 'R$59,98'
-  }
-]
+import { inject, computed } from 'vue'
+
+const { cartItems, updateQuantity } = inject('cart')
+
+function formatarReal(valor) {
+  return 'R$' + valor.toFixed(2).replace('.', ',')
+}
+
+function parseValor(valorStr) {
+  // Aceita tanto "R$29.99" quanto "R$29,99"
+  const numero = valorStr.replace('R$', '').replace(',', '.')
+  return parseFloat(numero)
+}
+
+function subtotalItem(item) {
+  return parseValor(item.valor) * item.quantidade
+}
+
+const subtotal = computed(() =>
+  cartItems.value.reduce((acc, item) => acc + subtotalItem(item), 0)
+)
+
+const shipping = 0
+
+const total = computed(() => subtotal.value + shipping)
 </script>
 
 <template>
@@ -64,12 +75,12 @@ const cartItems = [
           </div>
 
           <div class="quantity">
-            <button>-</button>
+            <button @click="updateQuantity(item.id, item.quantidade - 1)">-</button>
             <span>{{ item.quantidade }}</span>
-            <button>+</button>
+            <button @click="updateQuantity(item.id, item.quantidade + 1)">+</button>
           </div>
 
-          <h4>{{ item.subtotal }}</h4>
+          <h4>{{ formatarReal(subtotalItem(item)) }}</h4>
         </div>
 
         <RouterLink to="/" class="back">
@@ -84,17 +95,17 @@ const cartItems = [
 
     <div class="line">
       <span>Produtos:</span>
-      <span>{{ subtotal }}</span>
+      <span>{{ formatarReal(subtotal) }}</span>
     </div>
 
     <div class="line">
       <span>Frete:</span>
-      <span>{{ shipping }}</span>
+      <span>{{ formatarReal(shipping) }}</span>
     </div>
 
     <div class="line total">
       <span>Total:</span>
-      <span>{{ total }}</span>
+      <span>{{ formatarReal(total) }}</span>
     </div>
 
     <button class="checkout">

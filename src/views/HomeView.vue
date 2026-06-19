@@ -1,10 +1,12 @@
-
 <script setup>
+import { inject } from 'vue'
 import heroSection from '@/components/heroSection.vue'
 import navBar from '@/components/navBar.vue'
 import FeaturesSection from '@/components/FeaturesSection.vue'
 import dashCoffes from '@/components/dashCoffes.vue'
 import footerSection from '@/components/footerSection.vue'
+
+const { addToCart } = inject('cart')
 
 const coffes = [
   { id: 1, titulo:'Vanila Ice', descricao:'Super Fresh' , imagem:'/public/vanila-ice.png', valor: 'R$29.99' },
@@ -17,7 +19,6 @@ const coffes = [
   { id: 8, titulo:'Irish Coffee', descricao: 'Two Tower', imagem:'/public/irish-coffee.png', valor: 'R$12.00' },
 ]
 </script>
-
 <template>
 <navBar></navBar>
 <heroSection></heroSection>
@@ -30,6 +31,7 @@ const coffes = [
   :descricao="coffe.descricao"
   :imagem="coffe.imagem"
   :valor="coffe.valor"
+  @adicionar="addToCart"
 ></dashCoffes>
 </div>
 <div class="footer">
@@ -55,6 +57,3 @@ div.footer{
   width: 100%;
 }
 </style>
-
-
-
